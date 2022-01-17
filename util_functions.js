@@ -76,5 +76,10 @@ function sendNo(code){
 }
 function getRandomFetaure(){
     let i = Math.floor(Math.random() * 406);
-    
+    /*
+    use something like this and select one:
+    setsLayer.eachLayer(function (layer) {
+        console.log(layer.feature.properties)
+    })
+    */
 }
