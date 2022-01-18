@@ -10,4 +10,13 @@ html, body {
  }
 .leaflet-popup-content{
     direction: rtl;
+    text-align: center;
+    min-width: 100px;
+}
+button{
+    height: 30px;
+    padding: 2px;
+    margin: 5px;
+    min-width: 30px;
+
 }
