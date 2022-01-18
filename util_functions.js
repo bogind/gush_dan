@@ -28,6 +28,7 @@ async function mapInit(){
         //.addTo(map);
         if(sets.features.length == 406){
             setsLayer.addTo(map);
+            getRandomFetaure()
         }
     }
 
@@ -106,10 +107,16 @@ function sendNo(code){
 }
 function getRandomFetaure(){
     let i = Math.floor(Math.random() * 406);
-    /*
-    use something like this and select one:
+    var j =-1 
     setsLayer.eachLayer(function (layer) {
-        console.log(layer.feature.properties)
+        j +=1
+        if(layer.feature.properties && layer.feature.properties.LocalityCo){
+            if(j ===i){
+                map.fitBounds(layer.getBounds())
+                layer.openPopup()
+            }
+        }
+        
     })
-    */
+    
 }
