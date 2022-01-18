@@ -3,7 +3,7 @@ const defaultStyle = {
     weight: 2, 
     fillOpacity: 0.2,
 };
-
+const apiUrl = "https://script.google.com/macros/s/AKfycbzqHIiQ74HoUlADdX0LcNxPxC2qzNTse93QEsg8sPeg0y-w8i3opdFTD_gER8gXn78Y/exec"
 
 async function mapInit(){
 
@@ -69,10 +69,40 @@ function resetHighlight(e) {
     setsLayer.resetStyle(e.target);
 }
 function sendYes(code){
-    //need to create the app script API for this to do something
+    fetch(apiUrl+`?code=${code}&answer=1`, {
+        'method': 'post',
+        'contentType': 'application/json'
+      })
+    .then(response => response.json())
+    .then(data => {
+        setsLayer.eachLayer(function (layer) {
+            if(layer.feature.properties && layer.feature.properties.LocalityCo){
+                if(layer.feature.properties.LocalityCo === code ){
+                    layer.bindPopup(`<h1>${layer.feature.properties["LocNameHeb"]}</h1>\
+                    <center>תודה</center>`)
+                }
+            }
+            
+        })
+    })
 }
 function sendNo(code){
-    //need to create the app script API for this to do something
+    fetch(apiUrl+`?code=${code}&answer=0`, {
+        'method': 'post',
+        'contentType': 'application/json'
+      })
+    .then(response => response.json())
+    .then(data => {
+        setsLayer.eachLayer(function (layer) {
+            if(layer.feature.properties && layer.feature.properties.LocalityCo){
+                if(layer.feature.properties.LocalityCo === code ){
+                    layer.bindPopup(`<h1>${layer.feature.properties["LocNameHeb"]}</h1>\
+                    <center>תודה</center>`)
+                }
+            }
+            
+        })
+    })
 }
 function getRandomFetaure(){
     let i = Math.floor(Math.random() * 406);
