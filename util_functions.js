@@ -80,7 +80,8 @@ function sendYes(code){
             if(layer.feature.properties && layer.feature.properties.LocalityCo){
                 if(layer.feature.properties.LocalityCo === code ){
                     layer.bindPopup(`<h1>${layer.feature.properties["LocNameHeb"]}</h1>\
-                    <center>תודה</center>`)
+                    <center>תודה<br>
+                    <button onclick="getRandomFetaure()">לשחק שוב?</button></center>`)
                 }
             }
             
@@ -98,7 +99,8 @@ function sendNo(code){
             if(layer.feature.properties && layer.feature.properties.LocalityCo){
                 if(layer.feature.properties.LocalityCo === code ){
                     layer.bindPopup(`<h1>${layer.feature.properties["LocNameHeb"]}</h1>\
-                    <center>תודה</center>`)
+                    <center>תודה<br>
+                    <button onclick="getRandomFetaure()">לשחק שוב?</button></center>`)
                 }
             }
             
