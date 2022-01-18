@@ -34,6 +34,14 @@ async function mapInit(){
 
 }
 function onEachFeature(feature, layer){
+    if (feature.properties && feature.properties.LocNameHeb && feature.properties.LocalityCo) {
+        layer.bindPopup(`<h1>${feature.properties["LocNameHeb"]}</h1>\
+        <center>\
+        <h2>בגוש דן?</h2>\
+        <button onclick="sendYes(${feature.properties["LocalityCo"]})">כן</button>\
+        <button onclick="sendNo(${feature.properties["LocalityCo"]})">לא</button>\
+        </center>`)
+    }
     layer.on({
         mouseover: highlightFeature,
         mouseout: resetHighlight,
@@ -43,15 +51,7 @@ function onEachFeature(feature, layer){
 function onFeatureClick(e){
     let layer = e.target;
     let feature = e.target.feature;
-    
-    if (feature.properties && feature.properties.LocNameHeb && feature.properties.LocalityCo) {
-        layer.bindPopup(`<h1>${feature.properties["LocNameHeb"]}</h1>\
-        <center>\
-        <h2>בגוש דן?</h2>\
-        <button onclick="sendYes(${feature.properties["LocalityCo"]})">כן</button>\
-        <button onclick="sendNo(${feature.properties["LocalityCo"]})">לא</button>\
-        </center>`)
-    }
+    layer.openPopup()
 }
 function highlightFeature(e) {
     var layer = e.target;
