@@ -15,7 +15,8 @@ let sets = {
 
 let setsLayer = L.geoJSON(sets, { 
     style: defaultStyle,
-    onEachFeature: onEachFeature
+    onEachFeature: onEachFeature,
+    attribution: 'גבולות: למ"ס 2013'
 })
 
 
