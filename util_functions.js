@@ -181,7 +181,7 @@ function getFeatureStyle(feature){
     return {
         fillColor: feature.properties.color,
         weight: 2,
-        opacity: 0.2,
+        opacity: 1,
         color: 'gray',
         fillOpacity: 0.4
     };
