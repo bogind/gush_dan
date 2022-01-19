@@ -20,3 +20,33 @@ button{
     min-width: 30px;
 
 }
+.results{
+    background: rgba(255,255,255,0.8);
+    width: 30px;
+    height: 30px;
+    
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+}
+.fg-2x {
+    font-size: 1.5em;
+    line-height: 1.5em;
+    vertical-align: -15%;
+}
+.legend {
+    direction: rtl;
+    text-align: right;
+    line-height: 18px;
+    color: #555;
+    padding: 6px 8px;
+    background: rgba(255,255,255,0.8);
+}
+.legend i {
+    width: 18px;
+    height: 18px;
+    float: right;
+    margin-left: 8px;
+    opacity: 0.7;
+}

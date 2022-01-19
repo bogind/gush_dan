@@ -22,5 +22,5 @@ let setsLayer = L.geoJSON(sets, {
 
 mapInit()
 
-//L.control.inputs({ position: 'topright' }).addTo(map);
+L.control.results({ position: 'topright' }).addTo(map);
 map.attributionControl.addAttribution('נבנה ע"י דרור בוגין')
