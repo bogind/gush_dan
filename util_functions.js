@@ -169,6 +169,7 @@ function joinAttributes(results){
         }
     })
     if(map.hasLayer(setsLayer)){map.removeLayer(setsLayer)}
+    if(map.hasLayer(resultsLayer)){map.removeLayer(resultsLayer)}
     resultsLayer = L.geoJSON(sets, { 
         style: getFeatureStyle,
         onEachFeature: onEachResultsFeature,
