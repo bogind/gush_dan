@@ -35,3 +35,4 @@ L.Control.Legend = L.Control.extend({
 L.control.legend = function(opts) {
     return new L.Control.Legend(opts);
 }
+let legendControl = L.control.legend({ position: 'topright' })

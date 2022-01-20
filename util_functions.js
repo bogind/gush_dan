@@ -175,7 +175,10 @@ function joinAttributes(results){
         attribution: 'גבולות: למ"ס 2013, תוצאות: אתם'
     })
     resultsLayer.addTo(map)
-    L.control.legend({ position: 'topright' }).addTo(map);
+    if(!(legendControl._map)){
+        legendControl.addTo(map);
+    }
+    
 
 }
 function getFeatureStyle(feature){
